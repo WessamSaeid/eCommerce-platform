@@ -31,7 +31,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'activeadmin'
 gem 'devise'
 gem 'cancancan'
-gem 'bootstrap', '~> 4.4.1'
+
+
+gem 'bootstrap-sass'
+gem 'font-awesome-sass', '~> 5.12.0'
+gem 'jquery-rails'
 gem 'mini_racer'
 
 group :development, :test do
