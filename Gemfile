@@ -27,12 +27,17 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
-gem 'activeadmin'
+# Use devise for authentication
 gem 'devise'
+# Use activeadmin for system admin dashboard
+gem 'activeadmin'
+# Use cancancan for authorization
 gem 'cancancan'
-
-
+# Use Carrierwave for images uploading
+gem 'carrierwave', '~> 0.10.0'
+# Use mini_magick for images resizing
+gem 'mini_magick', '~> 4.3'
+# Use bootstrap for bootsrap V3
 gem 'bootstrap-sass'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'jquery-rails'
