@@ -5,18 +5,36 @@
 
                 <div class="col-md-4 clearfix">
                     <div class="logo pull-left">
-                        <a href=""><%= image_tag 'logo.png' %></a>
+                        <a href="/"><%= image_tag 'logo.png' %></a>
                     </div>
                 </div>
 
                 <div class="col-md-8 clearfix">
                     <div class="shop-menu clearfix pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="/users/edit"><i class="fa fa-user"></i> Account</a></li>
-                            <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-                            <li><a href=""><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="/users/sign_in"><i class="fa fa-lock"></i> Login</a></li>
+                            <% if user_signed_in? %>
+                                <li>
+                                    <%= link_to(edit_user_registration_path) do %>
+                                        <i class="fa fa-user"></i> Account
+                                    <% end %> 
+                                </li>
+                           
+                                <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
+                                <li><a href=""><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                <li><a href=""><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                           
+                                <li>
+                                    <%= link_to(destroy_user_session_path, method: :delete) do %>
+                                        <i class="fa fa-lock"></i> Logout
+                                    <% end %>       
+                                </li>
+                            <% else %>
+                                <li>
+                                    <%= link_to(new_user_session_path) do %>
+                                        <i class="fa fa-lock"></i> Login
+                                    <% end %>
+                                </li>
+                            <% end %>
                         </ul>
                     </div>
                 </div>
@@ -46,7 +64,6 @@
                                     <li><a href="">Product Details</a></li> 
                                     <li><a href="">Checkout</a></li> 
                                     <li><a href="">Cart</a></li> 
-                                    <li><a href="/users/sign_in">Login</a></li> 
                                 </ul>
                             </li> 
                         </ul>
